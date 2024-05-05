@@ -1,0 +1,94 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 30pt;
+}
+body {
+	min-height: 100vh;
+	position: relative;
+	display: grid;
+	place-items: center;
+	background: linear-gradient(
+		rgba(102, 102, 255, 1) 20%,
+		rgba(230, 230, 230, 1) 60%,
+		rgba(201, 253, 201, 1)
+	);
+	overflow: hidden;
+}
+.wrap {
+	width: 850px;
+	margin-top: 40px;
+	/*	border: 1px solid blue;  */
+}
+
+p {
+	margin: auto;
+}
+.morning {
+	font-family: "Changa One", cursive;
+	font-size: 2.5rem;
+	color: yellow;
+	-webkit-text-stroke: 0.1vw purple;
+	text-shadow: 6px 6px 10px navy;
+}
+.friends {
+	font-family: "Irish Grover", cursive;
+	font-size: 5.5rem;
+	text-align: center;
+	font-weight: 600;
+	letter-spacing: 1;
+	color: violet;
+	-webkit-text-stroke: 0.1vw purple;
+	text-shadow: -8px 10px yellow, 8px -8px rgba(0, 128, 0, 1), 14px 14px orange;
+	filter: drop-shadow(0px 0px 55px gold);
+	margin-top: -80px;
+}
+
+.sun-holder {
+	position: absolute;
+	top: 10%;
+	left: 25%;
+	margin: auto;
+	transform-origin: bottom right;
+	font-size: 5rem;
+	filter: drop-shadow(0px 0px 45px gold) brightness(1.15);
+	z-index: -10;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.sun-holder {
+		animation: sun-holder 15s linear infinite;
+	}
+	.sun {
+		animation: sun 15s linear infinite;
+	}
+}
+
+@keyframes sun-holder {
+	0% {
+		transform: rotate(0deg) translateX(-90px);
+	}
+	18% {
+		z-index: -10;
+	}
+	30% {
+		z-index: 100;
+	}
+	60% {
+		z-index: -10;
+	}
+	100% {
+		transform: rotate(360deg) translateX(-90px);
+	}
+}
+@keyframes sun {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(-360deg);
+	}
+}
